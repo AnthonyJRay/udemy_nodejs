@@ -1,0 +1,3 @@
+function Emitter() {
+    this.events = {};
+}
