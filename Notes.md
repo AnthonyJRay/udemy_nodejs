@@ -74,3 +74,7 @@ greetr.greet();
 # Since in many cases JavaScript code is "wrapping" C++ code, system events in libuv often times generate custom JavaScript events to make it easier to manage events/code.
 
 # Note to remember, they are NOT the same thing.
+
+# Throughout your application you could have many listeners, listening for a single event.
+
+# The Event Emitter is really just an Object, full of arrays of functions.
