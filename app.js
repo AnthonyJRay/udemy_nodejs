@@ -1,8 +1,11 @@
-var greet = require('./greet')
-var farewell = require('./greet/farewell')
+// creating a function on the fly assigned to the export object
+var greet = require('./greet1');
+greet();
 
-greet.english();
-greet.spanish();
+// Reaching down into the object and grabbing a specific property with the require function will also assign the variable a function instead of the export object.
+var greet2 = require('./greet2').greet;
+greet2();
 
-farewell.goodnight();
-farewell.goodbye();
+
+var greet3 = require('./greet3');
+greet3.greet();
