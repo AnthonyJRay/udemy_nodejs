@@ -1,0 +1,1 @@
+# Basic demonstration on 'protypes', 'inheritence' and 'function constructors' purpose and how they operate. As well as how to use and interact with them.

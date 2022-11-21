@@ -1,0 +1,8 @@
+
+
+{
+    "en": "Hello",
+    "es": "Hola",
+    "note1": "JavaScript can read JSON data and convert it into a JavaScript object like it does with object literal syntax.",
+    "note2": "JavaScript will do this automatically when/if required, eliminating the need to use 'module.exports'"
+}
