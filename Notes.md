@@ -85,3 +85,6 @@ greetr.greet();
 
 # A common pattern to avoid the use of "magic strings" is to create a seperate config file that has an object which stores the string as a value to a property. Resulting in the objects property being based around instead of a raw string. Eliminating the risk for typos and bugs. Which can be highly problematic in large codebases.
 # You can store as many of these "event variables" or names as needed, and reference them all from the same object.
+
+
+##### Test
