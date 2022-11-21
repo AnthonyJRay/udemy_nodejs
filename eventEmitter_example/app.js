@@ -1,5 +1,5 @@
-var Emitter = require('./emitter');
-
+var Emitter = require('./emitter');  // Change this to simply 'emitter' or 'events' which is the NodeJS folder the EventEmitter exists it.
+                                    // Simply changing this to the core NodeJS emitter will continue to run this code the same as if you were using the trivial emitter created in emitter.js
 var emtr = new Emitter();
 
 emtr.on('greet', function() {

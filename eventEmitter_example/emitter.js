@@ -1,5 +1,3 @@
-const greetModule = require("./greetModule");
-
 function Emitter() {
     this.events = {};
 }

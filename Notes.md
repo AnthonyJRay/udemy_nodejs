@@ -78,3 +78,9 @@ greetr.greet();
 # Throughout your application you could have many listeners, listening for a single event.
 
 # The Event Emitter is really just an Object, full of arrays of functions.
+
+# WORD WORD ALERT
+# "Magic String: A string that has some special meaning in our code."
+# This is bad because it makes it easy for a type to cause a bug and hard for tools to help us find it.
+
+# A common pattern to avoid the use of "magic strings" is to create a seperate config file that has an object which stores the string as a value to a property. Resulting in the objects property being based around instead of a raw string. Eliminating the risk for typos and bugs. Which can be highly problematic in large codebases.
