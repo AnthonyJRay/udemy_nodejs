@@ -93,3 +93,32 @@ greetr.greet();
 
 # Object.create() will create a new empty object, with it's prototype pointing an object passed into the parameters of Object.create.().
 # This is a very simple and clean way to setup a prototype chain/inheritence.
+
+
+```
+var person = {          
+    FIRSTNAME: '',
+    LASTNAME: '',
+    greet: function() {
+        console.log("Hello " + this.FIRSTNAME + " " + this.LASTNAME);
+    }
+}
+
+var john = Object.create(person);
+john.FIRSTNAME = "John";
+john.LASTNAME = "Doe";
+
+var jane = Object.create(person);
+jane.FIRSTNAME = "Jane";
+jane.LASTNAME = "Doe";
+
+console.log(john.greet());
+    ( Output: "Hello John Doe" )
+console.log(jane.greet());
+    ( Output: "Hello Jane Doe" )
+
+```
+
+# The person object will be used as the prototype for which any objects created pointing to it will inherit it's properties and methods through the prototype chain.
+# Creates a new empty object "john" and points to "person" to inherit it's prototype.
+# Stores the string value "John" in the empty objects FIRSTNAME property, on it's prototype.
