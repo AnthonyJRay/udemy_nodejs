@@ -1,15 +1,18 @@
-var Emitter = require('events');
-var eventConfig = require('./config').events;
+var person = {
+    firstname: '',
+    lastname: '',
+    greet: function() {
+        return this.firstname + ' ' + this.lastname;
+    }
+}
 
-var emtr = new Emitter();
+var anthony = Object.create(person);
+anthony.firstname = "Anthony";
+anthony.lastname = "Eriksen";
 
-emtr.on(eventConfig.GREET, function() {
-    console.log('Somewhere, someone said hello.');   // Remember, the .on() method will look for 'greet' as a PROPERTY NAME of the Emitter object.
-});
+var vincent = Object.create(person);
+vincent.firstname = "Vincent";
+vincent.lastname = "Eriksen";
 
-emtr.on(eventConfig.GREET, function() {
-    console.log('A greeting occurred!');
-});
-
-console.log('Hello!');      // Hypothetical event occured
-emtr.emit(eventConfig.GREET);         // Manually calling the emit() function to simulate an event trigger.
+console.log(anthony.greet());
+console.log(vincent.greet());
