@@ -177,3 +177,52 @@ obj.greet.apply({ name: 'Vincent Eriksen'}, [params,params])
 
 
 # ES6 Classes
+# "Classes" introduced in ES6 are a new way to create objects. Although, under the hood, they are created the same way. It's just an easier way to type them or "Syntactic Sugar".
+
+
+# 'use strict' at a JavaScript file forces more rules to how you can write your code. First instance, you can't create a variable and set a value to it on the fly without declaring the variable first with var, let, or const.
+
+
+# Example of difference between syntax, fconstructor vs classes.
+
+# Function Constructor syntax
+```
+function Person(firstName, lastName) {
+
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+Person.prototype.greet = function() {
+    console.log("This method is added to the prototype chain".)
+}
+var person1 = new Person("Anthony", "Eriksen")
+
+```
+# Manually adding things to the prototype using Constructor Function syntax.
+
+
+
+
+# Class syntax
+
+```
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    greet() {
+        console.log("This method is added to the prototype chain.")
+    }
+}
+
+var person2 = new Person("Vincent", "Eriksen");
+
+```
+# Anything inside the class and outside the constructor is automatically added to the prototype. Anything inside the constructor is added to each new object instantiated.
+
+
+# It's important to understand how Classes are structured under the hood. Classes in other programming languages are very difference than Classes in JavaScript. In JavaScript, Classes are just syntactic sugar and it abstracts you away from understanding the structure of the prototype chain and how it operates.
+
+# Classes are easier to write and cleaner. It's nice syntax but you need to understand what's actually happening under the hood.
+
