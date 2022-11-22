@@ -172,3 +172,8 @@ obj.greet.apply({ name: 'Vincent Eriksen'}, [params,params])
 ```
 
 # .call() takes a comma seperated list whereas .apply() takes an array.
+
+
+
+
+# ES6 Classes
