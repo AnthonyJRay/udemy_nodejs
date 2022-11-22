@@ -229,5 +229,37 @@ var person2 = new Person("Vincent", "Eriksen");
 # "extends" replaces inherit.
 # "super();" is require in the constructor() {}. Replaces .call();
 
+# JavaScript is "Synchronous"!
+#   "One process executing at a time."
+# Node does things "asynchronously".
+#   "Multiple processes executing at once."
+# V8 is Synchronous!
+
+# A callback is a function passed to some other function which we assume will be invoked at somepoint.
+# The function 'calls back', invoking the function you give it when it is done doing it's work.
+
+# Buffer: A Temporary holding spot for data. Intentially limited in size.
+# Stream: A sequence of data made available over time. Pieces of data that eventually combine into whole.
+
+# A stream, is a continuous flow a data, like water in a river. As data comes down the stream, it gets caught by the buffer until a certain amount of data has been captured. Then, the data is released from the buffer to be "processed" and the buffer will continue to collect the next batch of data supplied by the stream until the ALL the data has been supplied.
+
+# Binary Data: Data stored in binary. 0's and 1's. The core of the math that computers are based on. Each one or zero is called a 'bit' or 'binary digit'.
 
 
+# Character Set: A representation of characters as numbers.
+# Character Encoding: How characters are stored in binary. The numbers (or code points ) are converted and stored in binary.
+
+# THE BUFFER() METHOD IS DEPRECATED DUE TO SECURITY AND USABILITY ISSUES.
+
+# The Buffer() method is globally available in NodeJS and does not need to be "required".
+
+# The Buffer() method does require some data. You can specify a certain finite buffer size or directly add things like strings.
+
+# For the second argument you can specify the encoding. e.g "utf8". Although, utf8 is the default.
+
+```
+var buf = new Buffer('Hello', 'utf8');
+
+```
+
+# Takes the string, or unicode character set and converts it to binary, using utf8 encoding.
