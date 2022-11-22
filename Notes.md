@@ -226,3 +226,8 @@ var person2 = new Person("Vincent", "Eriksen");
 
 # Classes are easier to write and cleaner. It's nice syntax but you need to understand what's actually happening under the hood.
 
+# "extends" replaces inherit.
+# "super();" is require in the constructor() {}. Replaces .call();
+
+
+
