@@ -122,3 +122,53 @@ console.log(jane.greet());
 # The person object will be used as the prototype for which any objects created pointing to it will inherit it's properties and methods through the prototype chain.
 # Creates a new empty object "john" and points to "person" to inherit it's prototype.
 # Stores the string value "John" in the empty objects FIRSTNAME property, on it's prototype.
+
+# Template literals example
+
+```
+var firstName = "Anthony";
+console.log("Hello " + firstName);
+console.log(`Hello ${firstName}`);
+
+```
+
+
+# .call() and .apply()
+
+# .call() will take in an object for the "this" keyword to point to.
+
+```
+
+var obj = { 
+    name: 'Anthony Eriksen',
+    greet: function() {
+        console.log(`Hello ${this.name}`);
+    }
+}
+
+obj.greet();
+obj.greet.call({ name: 'Vincent Eriksen'})
+obj.greet.apply({ name: 'Vincent Eriksen'})
+
+```
+
+# Here, instead of the "this" keyword pointing to "obj" it instead points to the object passed into the .call() method. Essentially borrowing the functionality of obj.greet(); and giving it it's own object context.
+
+# .apply() works in the exact same way as .call(), the only difference being how parameters are passed if there are any.
+
+```
+
+var obj = { 
+    name: 'Anthony Eriksen',
+    greet: function(params) {
+        console.log(`Hello ${this.name}`);
+    }
+}
+
+obj.greet();
+obj.greet.call({ name: 'Vincent Eriksen'}, params, params)
+obj.greet.apply({ name: 'Vincent Eriksen'}, [params,params])
+
+```
+
+# .call() takes a comma seperated list whereas .apply() takes an array.
