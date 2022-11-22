@@ -263,3 +263,84 @@ var buf = new Buffer('Hello', 'utf8');
 ```
 
 # Takes the string, or unicode character set and converts it to binary, using utf8 encoding.
+
+# ES6 Typed Arrays
+
+# Callbacks
+
+
+```
+
+function greet(callback) {
+    console.log('Hello');
+    var data = {
+        name: "Anthony Eriksen"
+    }
+    callback(data);
+}
+
+greet(function() {
+    console.log('The callback was invoked');
+});
+
+greet(function(data) {
+    console.log('A different callback was invoked');
+    console.log(data);
+});
+
+greet(function(data) {
+    console.log(`Hello ${data.name}`);
+});
+
+
+```
+
+# File System | fs
+
+# readFileSync(__dirname + 'fileName.txt');
+
+# The Sync stands for synchronous. Meaning the application will wait until the operation is finished before it continues on.
+
+# While you don't typically want things in your application to run Synchronously, it can be useful in some situations.
+
+# Perhaps you need to read a config file first, before anything else in the application runs. readFileSync() can be useful in these situations.
+
+
+# .readFile() is the "asynchronous" version. readFile takes a callback function which gets sent off to the Event Loop in core C++ libuv for the Operating System to work on WHILE the application continues to run. Once that process in the Event Loop is finished, it gets sent back to the application.
+
+```
+
+var greet = fs.readFile(__dirname + 'fileName.txt', function(err, data) {});
+
+// By default, what's returned from the readFile() method is a buffer  unless you otherwise explicitly set a character encoding. i.e "uft8".
+
+```
+
+# Error-first Callback: Callbacks take an error object as their first parameter.
+# "null" if no error, otherwise will contain an object defining the error. This is a standard so we know in what order to place our parameters for our callbacks.
+
+# You should ALWAYS, whenever possible, do things asynchronously. It will make your applications more performant and provide a better user experience. If, for some reason a particular thing REQUIRES it to be completed before moving on, you can scope synchronous operations to that particular thing only.
+
+# A problem with returning a buffer they go on what's called the "heap". The "heap" is the memory allocation for the V8 engine. Depending on how many people are using your application and how big the buffers are, you can cause poor performance in your application. This is why they are coupled with "Streams".
+
+
+# Streams
+# Chunk: A piece of data being sent through a stream. Data is split in 'chunks' and streamed.
+
+# A "Stream.Readable" means you can only read the data that's coming through. You cannot send any data back down the stream.
+
+# A "Stream.Writable" means you can only send data down the stream but you cannot read any data that's coming down the stream.
+
+# A "Stream.Duplex" let's you do both, read and write data down the stream.
+
+# A "Stream.Transform" let's you change the data as it comes through the stream. ie It's written to the stream and it's different when it's read.
+
+# Abstract(base) Class: A type of constructor you never work directly with, but inherit from. We create new custom objects which inherit from the abstract base class.
+
+
+# A buffer by default has a 64kb buffer size.
+
+# The "highWaterMark: " options allows you to set a buffer size.
+
+
+
