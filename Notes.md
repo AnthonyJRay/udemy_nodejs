@@ -382,3 +382,83 @@ var greet = fs.readFile(__dirname + 'fileName.txt', function(err, data) {});
 # CHOOSING to NOT use a "Stream" or CHOOSING to use a "Synchronous" method, should be a deliberate and conscious decision for specific purposes.
 
 # First instincts should ALWAYS be "Streams" and "Asynchronous".
+
+# ~~~~~~~~~
+
+# WEB SERVER CHECKLIST
+#   - Modules (ES6 Modules)
+#   - Ways to deal with Files. (fs, Streams, Pipes, Buffers)
+#   - A way to deal with work that takes a long time. (Asynchronous, Streams, Chunks, Event Loop)
+
+# ~~~~~~~~
+
+
+# HTTP and Being a Web Sever
+
+
+# TCP/IP PROTOCOL
+
+# Protocol: A set of rules two sides agree on to use when communicating.
+#   -Both the client and server are programmed to understand and use that particular set of rules.
+
+# Port: Once a computer receives a packet, how it knows what program to send it to.
+#   - When a program is setup on the operating system to receive packets from a particular port, it is  said that the program is 'listening' to that port.
+
+# If a client, makes a request to a web server, the web server could be running multiple programs. eg NodeJS, Email, FTP, etc. You use ports to give these programs a unique identifier which allow you to control which program your request should be looking to send to and for each server program to know for which port to be listening for.
+
+# The port is specified as part of the IP Address.
+
+# Socket Address
+# 78.132.160.4:443
+# IP Address:Port
+
+
+# HTTP
+
+# HTTP: A set of rules(or format) for data being transferred on the web.
+# - "HyperText Transfer Protocol". It's a format defining data being transferred via TCP/IP.
+# The FORMAT of the Request and Reponses is in "HTTP".
+
+
+# HTTP Request example
+
+# CONNECT www.google.com:443 HTTP/1.1
+# HOST: www.google.com
+# Connection: keep-alive
+
+# ~~~~~~~~~~
+
+# HTTP Response example
+
+# (status) HTTP/1.1 200 OK           
+# (headers) Content-Length: 44
+# (headers) Content-Type: text/html <-- MIME Type
+
+# (body) <html><head>...</head></html>
+
+
+
+# MIME type: A standard for specifying the type of data being sent.
+#   Stands for "Multipurpose Internet Mail Extensions'.
+# eg application/json, text/html, image/jpeg
+
+
+# HTTP_PARSER ( Found inside core NodeJS )
+# Parses data in Requests and Responses into packets/chunks.
+
+# ~~~~~~~~~~~~~~~~
+
+# Build a Web Server in Node
+
+# http is a core NodeJS module.
+# http has a .createServer() method for setting up a local server.
+# .createServer takes in a callback function as a parameter which is turned into an event listener from the core Event Emitter object..
+# The callback function takes in a request and response parameter to set up how to deal with requests and reponses.
+# the response object has access to a .writeHead() method where you can create your headers.
+# The .writeHead() method takes in a status code and options wrapped in object literals which specify things like the content type. (html/text/files/etc)
+# Below the headers you write in the body of the request/reponse itself.
+# Then the req/res objects have access to a .send() or .end() method;
+# The createServer() method also has access to a .listen() method where you specify which port to listen on and an address.
+
+
+
