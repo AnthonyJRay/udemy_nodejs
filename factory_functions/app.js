@@ -1,6 +1,8 @@
+// Classes are a good "replacement" to Factory Functions.
+
 // Factory functions are a good, safe way to make new objects.
 // This factory functions leverages the advantages of closure and encapsulation with GETTERS and SETTERS to keep your variables and business-logic safe from being exposed outside their respective scopes.
-// This style is also very cohesive when being able to add and keep your business logic within their respective contexts as well as from being exposed.
+// It's also very cohesive to keep your data and business logic to together.
 
 const createPerson = function(firstName, lastName, age) {
     // closure
