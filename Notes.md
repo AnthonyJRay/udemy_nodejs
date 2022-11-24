@@ -5,19 +5,20 @@
 #   - Ability to accept Requests and send Responses.
 #   - A way to deal with work that takes a long time.
 
-
-
+# ~~~~~~~~~
 
 # MODULES 
 
 # Each folder represents notes from various segments of the course.
+
 # Depending on what's being demonstrated in each segment, you should note to need to move either the 'app.js' file into the ROOT directory or all files within a segment folder. 
+
 # This just makes it easier than to have to move in and out of a directory in the CLI.
 
 # NOTE: Simply returning an object from require will be cached and any subsequent call to that file will point to the same cached object. ie Changes to properties will affect all objects.
 
-
 # When code is ran through node, it's ran through a 'function expression'.
+
 # Which is how we get access to the "module" object. It's a parameter passed to the function.
 ```
     (function(exports, require, module, __filename, __dirname) {
@@ -30,23 +31,23 @@
 
 fn(module.exports, require, module, filename, dirname);
 ```
-
-# Essentially, module.exports is passed to to the exports parameter. 
 # The are two variables pointing at the same object in memory.
+# Essentially, module.exports is passed to to the exports parameter. 
+
 # Remember, the 'require' function RETURNS 'module.exports' so it's really returning a property on the "module" object which is a seperate variable from the "exports" variable.
 
 # Setting a value like a function, will break the reference spot in memory.
 # Changing the exports variable and assigning it a value will no longer point to the same spot in memory that 'module.exports' points to.
+
 # The 'require' function doesn't return the 'exports' object, it returns the 'exports' property on the 'module' object. Thus resulting in 'module.exports' to not inherit the function assigned to the 'exports' property.
 
 # exports CAN be mutated, or properties and methods ADDED to it as long as it isn't being ASSIGNED a new value. Thus module.exports will continue to inherit those properties and methods as 'modules' will still remain pointing to that same object.
 
-# Given the potentially proplematic behavior that can happen if 'exports' gets assigned a new value, even if, some code out there might use the 'exports' object to add or mutate new properties and methods...
+# Given the potentially proplematic behavior that can happen if 'exports' gets assigned a new xvalue, even if, some code out there might use the 'exports' object to add or mutate new properties and methods...
 
 # JUST USE 'module.exports' !!!!
 
-
-## ES6 Modules Syntax
+## ES6 MODULES SYNTAX
 
 ```
 export function greet() {
@@ -60,9 +61,9 @@ greetr.greet();
 
 # * will import anything that has the export keyword. * is not required and can be more specific to import certain things.
 
+# ~~~~~~~~~
 
-
-# Events and the Event Emitter
+# EVENTS AND THE EVENT EMITTER
 
 # In Node there are two seperate kinds of Events. "System Events" || "Custom Events"
 # "System Events" come from the C++ core in "libuv". Such as file system events.
@@ -132,9 +133,9 @@ console.log(`Hello ${firstName}`);
 
 ```
 
+# ~~~~~~~~~
 
 # .call() and .apply()
-
 # .call() will take in an object for the "this" keyword to point to.
 
 ```
@@ -162,7 +163,7 @@ var obj = {
     name: 'Anthony Eriksen',
     greet: function(params) {
         console.log(`Hello ${this.name}`);
-    }
+    }1
 }
 
 obj.greet();
@@ -173,10 +174,10 @@ obj.greet.apply({ name: 'Vincent Eriksen'}, [params,params])
 
 # .call() takes a comma seperated list whereas .apply() takes an array.
 
+# ~~~~~~~~~
 
+# ES6 CLASSES
 
-
-# ES6 Classes
 # "Classes" introduced in ES6 are a new way to create objects. Although, under the hood, they are created the same way. It's just an easier way to type them or "Syntactic Sugar".
 
 
@@ -199,9 +200,6 @@ var person1 = new Person("Anthony", "Eriksen")
 
 ```
 # Manually adding things to the prototype using Constructor Function syntax.
-
-
-
 
 # Class syntax
 
@@ -235,8 +233,14 @@ var person2 = new Person("Vincent", "Eriksen");
 #   "Multiple processes executing at once."
 # V8 is Synchronous!
 
+# CALLBACKS
+
 # A callback is a function passed to some other function which we assume will be invoked at somepoint.
 # The function 'calls back', invoking the function you give it when it is done doing it's work.
+
+# ~~~~~~~~~
+
+# BUFFERS
 
 # Buffer: A Temporary holding spot for data. Intentially limited in size.
 # Stream: A sequence of data made available over time. Pieces of data that eventually combine into whole.
@@ -266,7 +270,9 @@ var buf = new Buffer('Hello', 'utf8');
 
 # ES6 Typed Arrays
 
-# Callbacks
+# ~~~~~~~~~
+
+# CALLBACKS
 
 
 ```
@@ -295,7 +301,9 @@ greet(function(data) {
 
 ```
 
-# File System | fs
+# ~~~~~~~~~
+
+# FILE SYSTEM | fs
 
 # readFileSync(__dirname + 'fileName.txt');
 
@@ -323,8 +331,9 @@ var greet = fs.readFile(__dirname + 'fileName.txt', function(err, data) {});
 
 # A problem with returning a buffer they go on what's called the "heap". The "heap" is the memory allocation for the V8 engine. Depending on how many people are using your application and how big the buffers are, you can cause poor performance in your application. This is why they are coupled with "Streams".
 
+# ~~~~~~~~~
 
-# Streams
+# STREAMS
 # Chunk: A piece of data being sent through a stream. Data is split in 'chunks' and streamed.
 
 # A "Stream.Readable" means you can only read the data that's coming through. You cannot send any data back down the stream.
@@ -342,5 +351,20 @@ var greet = fs.readFile(__dirname + 'fileName.txt', function(err, data) {});
 
 # The "highWaterMark: " options allows you to set a buffer size.
 
+# ~~~~~~~~~
+
+# PIPES
+
+# Pipe: Connecting two streams by writing to one stream what is being read from another. In Node, you pipe from a Readable stream to a Writable stream.
+
+# The .pipe() method is available to all readable streams through the Readable prototype.
+
+# The pipe method takes a destination parameter. "Where do you want to send this "chunk" to?
+# The destination must/should be a writable stream.
 
 
+# Closure
+# Callback Functions
+# Prototype
+# Prototypal Inheritence
+# 'this' keyword
