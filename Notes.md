@@ -373,4 +373,12 @@ var greet = fs.readFile(__dirname + 'fileName.txt', function(err, data) {});
 
 # Method Chaining: A method returns an object so we can keep calling more methods. Sometimes it returns a parent object (technically "cascading") and sometimes some other object.
 
-# Streams, Pipes, Buffers, etc. is the "NodeJS" way of thinking about data. This is how data is moved from one place to another.
+# Streams, Pipes, Buffers, etc. is the "NodeJS" way of thinking about data. This is how data is moved from one place to another and processed. It helps Node be performant. It provides these methodologies for these reasons.
+
+# When working with Node you should be thinking, "Where can I use a stream?" because it minimizes the buffer size you're working with, therefore helping with how much memory your application is using and helping with the speed at which things seem to occur.
+
+# Asynchronous methods and Streams!
+
+# CHOOSING to NOT use a "Stream" or CHOOSING to use a "Synchronous" method, should be a deliberate and conscious decision for specific purposes.
+
+# First instincts should ALWAYS be "Streams" and "Asynchronous".
