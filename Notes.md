@@ -363,8 +363,14 @@ var greet = fs.readFile(__dirname + 'fileName.txt', function(err, data) {});
 # The destination must/should be a writable stream.
 
 
-# Closure
-# Callback Functions
-# Prototype
-# Prototypal Inheritence
-# 'this' keyword
+# The idea, of sending data from a readable stream to a writable stream as each chunk is processed, is very common in NodeJS development.
+
+# .pipe() is available on a readable stream.
+
+# The pipe() method exists on Readable streams to "pipe" data to Writable streams also Duplex and Transform streams because they include BOTH readable and writable.
+
+# Obviously data, doesn't have to be streamed with Files. Either from a file, or too a file. Data can be streamed to ANYTHING, that is a STREAM. ie Internet Connection
+
+# Method Chaining: A method returns an object so we can keep calling more methods. Sometimes it returns a parent object (technically "cascading") and sometimes some other object.
+
+# Streams, Pipes, Buffers, etc. is the "NodeJS" way of thinking about data. This is how data is moved from one place to another.

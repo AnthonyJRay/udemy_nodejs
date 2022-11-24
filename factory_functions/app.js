@@ -30,11 +30,22 @@ const createPerson = function(firstName, lastName, age) {
         return personFirstName;
     },
 
+    get lastName() {
+        return personLastName;
+    },
+
     set firstName(name) {
         if(isValidName(name))  {
             personFirstName = name;
         } else {
             throw "Please provide a valid first name."
+        }
+    },
+    set lastName(name) {
+        if(isValidName(name))  {
+            personLastName = name;
+        } else {
+            throw "Please provide a valid last name."
         }
     }
    }
@@ -45,3 +56,6 @@ const ant = createPerson("Anthony", "Eriksen", 33);
 const dee = createPerson("Debra", "Thompson", 30);
 console.log(ant)
 console.log(ant.firstName);
+
+ant.lastName = "";  // Will throw error "Please provide valid last name."
+
