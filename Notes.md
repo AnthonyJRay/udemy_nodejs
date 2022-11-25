@@ -461,4 +461,55 @@ var greet = fs.readFile(__dirname + 'fileName.txt', function(err, data) {});
 # The createServer() method also has access to a .listen() method where you specify which port to listen on and an address.
 
 
+# Template: Text designed to be the basis for final text or content after being processed.There's usually some specific template language, so the template system knows how to replace placeholders with real values.
+
+
+# .replace() can be used to dynamically insert HTML markup.
+
+
+# API and Endpoints
+
+# API: A set of tools for building a software application. The tools are usually made available via a set of URLs which accept and send only data via HTTP and TCP/IP.
+
+# Endpoints: One URL in a web API. Somethings that endpoint does multiple things by making choices based on the HTTP request headers.
+
+
+```
+
+var http = require('http');
+var fs = require('fs');
+
+http.createServer(function(req, res) {
+
+    res.writeHead(200, { 'Content-Type': 'application.json' });
+   var obj = {
+    firstName: 'Anthony',
+    lastName: 'Eriksen'
+   }
+   res.end(JSON.stringify(obj)); // Takes the obj and converts it to a JSON string.
+
+}).listen(1337, '127.0.0.1');
+
+
+Output: {"firstName":"Anthony","lastName":"Eriksen"}
+
+```
+
+# Serialize: Translating an object into a format that can be stored or transferred. JSON, CSV, XML, and others are popular. 'Deserialize" is the opposite.
+
+
+# ROUTING
+# Routing: Mapping a HTTP requests content. Whether actual files exist on the server or not.
+
+
+
+# ~~~~~~~~~
+
+# WEB SERVER CHECKLIST
+#   - Modules (ES6 Modules)
+#   - Ways to deal with Files. (fs, Streams, Pipes, Buffers)
+#   - A way to deal with work that takes a long time. (Asynchronous, Streams, Chunks, Event Loop)
+#   - The ability to accept requests and send responses. ( http object, createServer(), req/res)
+
+# ~~~~~~~~
 
