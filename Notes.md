@@ -553,3 +553,127 @@ Output: {"firstName":"Anthony","lastName":"Eriksen"}
 
 
 # Express
+
+```
+
+var express = require('express');
+var app = express();
+
+app.listen(3000);
+
+```
+
+
+# Environment Variables: Global variables specific to the environment (server) the code is living in. Different servers can have different variable settings and we can access those values in code.
+
+```
+var port = process.env.PORT || 3000;
+```
+
+# Setting up a variable for the .listen() method to use either the current environments port and if there isn't one, use port 3000.
+
+# You must set up an environment variable. Could have different ports set up for different reasons. aka port 80 for production.
+
+# Setting up environment variables is very common for this kind of application.
+
+# HTTP Method: Specifies the type of action the request wishes to make. GET, POST, DELETE, and others. Also called "verbs".
+
+# the ".get()" method that is returned from the "express()" function is the same/similar to the HTTP GET request but more powerful and with a few more features.
+
+```
+
+app.get('/', function(req, res) {
+    res.send('
+    <html>
+        <head></head>
+            <body>
+                <h1>Hello World</h1>
+            </body>
+    </html>')
+});
+
+```
+
+# Notice the .send() method is sending a string. A string of HTML. Also note how there is no need to specify it's content type, as express will do that for you.
+
+```
+app.get('/api', function(req, res) {
+    res.json({ firstName: "Anthony", lastName: "Eriksen"})
+})
+```
+
+# Express also has a .json() method to handle JSON data. Removing the need to set the content-type to application/json manually in the headers.
+
+# ~~~~~~~
+
+# Routing
+
+# Visit "expressjs.com" to find further documentation on "Express" and "Routing".
+# You can find ways to match route paths based on string patterns.
+
+```
+
+app.get('/person/:id', function(req, res) {
+    res.send('
+    <html>
+        <head></head>
+            <body>
+                <h1>Person: ' + req.params.id + '</h1>
+            </body>
+    </html>')
+});
+
+```
+
+# In the path, ":id" is a variable and that variables contents will be read, and sent into the request objects "params" property.
+
+# This is very useful to be able to use variables to pull data dynamically and use that data in your application based on it's url.
+
+# ~~~~~~~~~~~~~~~~~~~~
+
+# Static Files and Middleware
+# Middleware: Code that sits between two layers of software.
+#   In the case of Express, sitting between the request and the response.
+
+# Middleware is where you put common plugins or things that should happen between the request and response.
+
+# A common example of middleware is being able to handle files being downloaded. ie CSS files, Image files, etc.
+
+# Static Files: Files not processed by code in any way. ie HTML, CSS, Image files.
+
+# It is very common to name the file that holds your static files "public".
+
+```
+app.use('<route>', express.static(__dirname + '<static folder>'));
+```
+
+# Middleware is inserting with the .use() method returned from the express() object.
+# The method takes in a url, or a route, that the request will come from and the second parameter is where or what is being used/looked for and "stream" it back.
+# So anything in the folder specified in the .static() method, will become available when visiting/requesting from the route.
+# Can be used to reference/access data through routes you request in your app for specific purposes not just client-side requests.
+
+# You can make your own middleware with the .use() method. Just remember in the callback function, it takes a req, res, and a third, next parameter. You call "next()" to exit the function and go on to the "next" thing. Or, just exit the function.
+
+# next() can allow for chaining middleware if needed.
+
+# You can also leave off the route in the use() method to make the middleware run on every request.
+
+# You can find some popular middleware plugins on the Expressjs website with guides on how to implement and use them. eg Parsing cookies, session cookies, debuggers, body parser, etc.
+
+# A very popular middle is called "passport" which deals with authentication. Which makes sure a user is properly logged in and authenticated before you actually response with any data or personal information. Be it logged in through the application itself, or OAUTH (logging in through Google or Facebook, etc).
+
+
+# ~~~~~~~~~~~~~~~~~~~
+
+# Templates and Template Engines
+
+
+
+
+
+
+
+
+
+
+

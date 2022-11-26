@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AnthonyJRay/udemy_nodejs#readme",
   "dependencies": {
+    "express": "^4.18.2",
     "moment": "^2.29.4"
   },
   "devDependencies": {
