@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-udemy",
+  "version": "1.0.0",
+  "description": "Learn and Understand NodeJS by: Anthony Alicea - Udemy",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnthonyJRay/udemy_nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnthonyJRay/udemy_nodejs/issues"
+  },
+  "homepage": "https://github.com/AnthonyJRay/udemy_nodejs#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  },
+  "devDependencies": {
+    "jasmine-node": "^3.0.0"
+  }
+}

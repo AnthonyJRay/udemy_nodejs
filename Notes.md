@@ -513,3 +513,40 @@ Output: {"firstName":"Anthony","lastName":"Eriksen"}
 
 # ~~~~~~~~
 
+
+# NPM: Node Package Manager
+ 
+
+ # Versioning
+ # v1.7.3 = vMajor.Minor.Patch
+ # semver.org
+
+# NPM and NPM Registry
+
+
+# Init, Nodemon, Package.JSON
+
+# "npm init" to initialize a package.json in your application.
+
+# "scripts" inside the package.json is where you can add additional commands ie testing, starting server, etc.
+# "npm test" comes by default.
+
+
+# npm install <package>
+# "  --save " ( creates a reference in the package.json under dependencies )
+# If a dependency has a "Carot" (" ^ ") in it's version number, it means it will automatically update that dependency if it's a "Minor" or "Patch" update.
+# A "Tilde" (~) means it will only update on patches.
+# You don't need to push the "node_modules" folder to Github. Keeps your application size smaller. Use "npm install" to install listed dependencies in the "package.json" file.
+
+# " --save-dev " saves the package as "Development Dependency". Meaning, the app will still run without it but it's required to have when working on the development. ie testing tools, etc.
+
+# -g Will install the package globally on  your machine. Where in your computer it installs can vary.
+
+# One critisism of Node is that every dependency comes with its own set on dependencies and may end up with duplicate dependencies in the same application. This is why it's important to push only what the application needs to run.
+
+
+# nodemon ( Node Monitor ) watches for changes in your Node application and updates it live without having to restart or re-run your code.
+
+# nodemon <filename> By default it looks for app.js
+
+# Nodemon uses the built-in 'fs' module functionality within Node.
