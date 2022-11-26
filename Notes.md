@@ -666,6 +666,59 @@ app.use('<route>', express.static(__dirname + '<static folder>'));
 # ~~~~~~~~~~~~~~~~~~~
 
 # Templates and Template Engines
+# Ultimately a template engine is an engine that takes a string/text, and translate into the approriate HTML in the http response.
+# 'ejs' is inspired by ASP.net(?)
+
+
+```
+app.set("view engine", "ejs");
+
+```
+# ^-sets "view engine" to files located in the views folder with the file extension ".ejs
+
+# Express will automatically look for the static view files in a folder called "views". "views" just means User Interface.
+
+```
+
+app.get('/', function(req, res) {
+    res.render('index');
+});
+
+```
+# The .render() method will go out, find the "index" file in the "views" folder, with the extension set in the .set() method on the express() function/app.
+
+```
+
+<body>
+    <h1>Person: <%= ID %></P></h1>
+</body>
+
+```
+
+# With ejs or a template engine, you can dynamically render things to the view THROUGH the html/ejs file. The " = " sign, is used when you are wanting to RETURN something.
+
+```
+
+app.get('/', function(req, res) {
+    res.render('index', { ID: req.params.id});
+});
+
+```
+
+# In the .render() method, you can add as a second parameter an object, where you can set the data you wish to use in your ejs.
+
+# The Object you give the view is generally called the "model".
+
+
+# Querystring and POST Parameters
+
+# RESTful APIs and JSON
+
+
+
+
+
+
 
 
 
