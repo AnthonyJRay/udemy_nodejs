@@ -23,4 +23,4 @@ app.get('/api', function(req, res) {
     res.json({ firstName: "Anthony", lastName: "Eriksen"})
 })
 
-app.listen(port);
+app.listen(port); 
