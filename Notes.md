@@ -753,6 +753,103 @@ app.delete('/api/person/:id', function(req, res,) {
 
 # express <appName>
 
+# JavaScript, JSON, and Databases
+
+# Relational Databases and SQL
+#   - When referring to "relational" databases, typically you're referring to a database made up a table, with columns and rows. You don't want to stuff all your data into one table, so you can break up your data into different tables.
+#   - ie a "People" table that connects to an "Addresses" table via a shared "id" property.
+
+# In comparison to JavaScript and how to deal with the data, you can think of each table as an array, and each item in the array is an object.
+
+
+# ~~~~~~~~~~~~~
+
+# Node and MySQL
+
+# - What's coming back, from any SQL database, ie mysql etc. is arrays of objects. So just think of them as objects and you know how to manipulate them.
+
+
+# ~~~~~~~~~~~~~
+
+# NoSQL and Documents
+# - NoSQL is actually a variety of technologies that are alternatives to tables and SQL. One of those types is a "document" database. "MongoDB" is a "document database".
+
+
+# In a SQL database, you're using a table based-approach and upon retrieving data from a SQL database, the data is turned into objects and into arrays. Whereas something like a "document database" is using just the objects themselves ie json objects etc.
+
+# SQL databases came out as a way to reduce the amount of data stored. It handles repeated data well.
+
+# In modern day, storage has become much cheaper and the concern is less on the storage constrints but on the ability to easily change things in an everchanging world. In a SQL database, it can be quite taxing to have to change, or re-organizing the database.
+
+
+# ~~~~~~~~~~~~
+
+# MongoDB and Mongoose
+
+``` 
+    var mongoose = require('mongoose');
+
+    mongoose.connect( <URL> );
+
+    var Schema = mongoose.Schema;
+
+    var personSchema = new Schema({
+        firstName: String,
+        lastName: String,
+        address: String
+    });
+
+    var Person = mongoose.model("Person", personSchema);
+
+    var anthony = Person({
+        firstName: "Anthony",
+        lastName: "Eriksen",
+        address: "555 Main St."
+    });
+
+    var vincent = Person({
+        firstName: "Vincent",
+        lastName: "Eriksen",
+        address: "555 Main St."
+    })
+
+```
+
+
+# In Mongoose, there exists "Schemas". In a way, you can think of Schemas like a JavaScript "Function Constructor". In that, they instantiate new objects using a skeleton structure you create.
+
+# Unlike a function constructor, in the example above we don't use the "new" keyword, we just pass the function an object.
+
+# Any object, returning back from the model, will have some methods on it that it inherits from model, like "save" or "find", etc. So if you're wanting to save an object you can call ".save()" on your new object and pass it a callback.
+
+
+# ~~~~~~~~~~~~~~~
+
+# The MEAN Stack. ( MongoDB, Express, AngularJS, NodeJS )
+
+# M - MongoDB   Stores your data in documents that look a lot like JSON and JavaScript object literal notation.
+# E - Express   JavaScript framework that makes things like routing, writing APIs, and working HTTP easier.
+# A - AngularJS JavaScript framework for managing code and UI in the browser, removing a lot of manual work.
+# N - NodeJS    JavaScript on the server. Handle HTTP requests and responses + more.
+
+
+# All 4 of these technologies have 1 big thing in common, It's ALL JavaScript.
+
+
+# ~~~~~~~~~~~~~~
+
+# Angular JS and Managing the Client
+
+
+
+
+
+
+
+
+
+
+
 
 
 
