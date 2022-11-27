@@ -744,7 +744,15 @@ app.delete('/api/person/:id', function(req, res,) {
  # Express makes it very simple to make basic RESTful APIs.
 
 
- 
+# ~~~~~~~~~~~~~~~~~~~~~~
+
+
+# Structuring an APP
+
+# Express has a package called "express-generator". This will generate an application "skeleton" with a basic folder structure.
+
+# express <appName>
+
 
 
 
