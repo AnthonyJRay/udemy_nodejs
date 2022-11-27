@@ -840,6 +840,31 @@ app.delete('/api/person/:id', function(req, res,) {
 
 # Angular JS and Managing the Client
 
+# Browsers are written in C++. Even though Google Chrome uses the V8 engine, other browsers other JavaScript engines embedded into them to give them access to extra features they implement.
+
+# DOM: Document Object Model. The structure browsers use to store and manage webpages.
+#   It's a common misconception that the DOM lives within the JavaScript engine when it really lives in the browser. The browser uses the DOM to render the web page and gives JavaScript access to features so that it can manipulate the DOM. When the DOM is changed, the browser will automatically re-render the webpage.
+
+# The DOM will take HTML and convert it into a hierarchy of JavaScript Objects and it becomes the DOM tree.
+
+
+# ~~~~~~~~~~~~~
+
+# Working with the Full Stack and being a Full Stack Developer
+
+# Seed: Adding initial data to a database. *Seed Data*
+
+
+# A good way of starting a new application is by creating the API first. Then, you can plug in any front-end you want/need. And if you ever need to/want to change the front-end technology, the API will be modular in a way that you can just plug back into it through whatever new front-end technology you are trying to switch to.
+
+
+
+
+
+
+
+
+
 
 
 
