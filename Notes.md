@@ -711,9 +711,40 @@ app.get('/', function(req, res) {
 
 
 # Querystring and POST Parameters
+# REVISIT THIS MODULE!
 
 # RESTful APIs and JSON
 
+# REST: An architectural style for building APIs.
+# Stands for "Representational State Transfer". We decide that HTTP verbs and URLs mean something.
+
+
+```
+
+app.post('/api/person/:id', function(req, res) {
+    res.json({ firstName: "Anthony", lastName: "Eriksen"})
+})
+
+
+app.post('/api/person', jsonParser, function(req,res) {
+    // save to the database
+
+});
+
+app.delete('/api/person/:id', function(req, res,) {
+    // delete from the database
+    
+});
+
+```
+
+# example of a RESTful API.
+# A RESTful API is a style of building your API in a way that responds to the HTTP requests "verbs", such as ' app.delete('/api/person/:id') instead of ' /api/person/:id/delete '
+ 
+ # Express makes it very simple to make basic RESTful APIs.
+
+
+ 
 
 
 

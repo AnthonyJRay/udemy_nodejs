@@ -31,14 +31,18 @@ app.post('/person',urlencodedParser, function(req, res) {
         console.log(req.body.lastName);
 });
 
-app.post('/personojson', jsonParser, function(req,res) {
-    res.send('Thank you for the JSON data!');
-    console.log(req.body.firstnName);
-    console.log(req.body.lastName);
-})
-
-app.get('/api', function(req, res) {
+app.post('/api/person/:id', function(req, res) {
     res.json({ firstName: "Anthony", lastName: "Eriksen"})
 })
 
+
+app.post('/api/person', jsonParser, function(req,res) {
+    // save to the database
+
+});
+
+app.delete('/api/person/:id', function(req, res,) {
+    // delete from the database
+    
+});
 app.listen(port); 
